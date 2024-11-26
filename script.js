@@ -1,6 +1,12 @@
+const game = createGame();
+do{
+    game.playRound();
+} while (game.gameboard.checkWon() == false);
+console.log(`Player ${game.gameboard.checkWon()} has won!`);
+
 function createGameboard() {
     const gameboard = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']];
-
+    
     function print() {
         let string = '';
         for (row of gameboard) {
@@ -105,9 +111,3 @@ function createGame() {
     }
     return {playRound, gameboard};
 }
-
-const game = createGame();
-do{
-    game.playRound();
-} while (game.gameboard.checkWon() == false);
-console.log(`Player ${game.gameboard.checkWon()} has won!`);
